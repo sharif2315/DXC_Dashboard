@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}" type="text/css">
+    <title>Report 2</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Report 2</h1>
+    </div>
+    <div class="container">
+      <table class="table-sm table-bordered table-striped">
+        <tr class="bg-primary text-light">
+          <th>Brand</th>
+          <th>Total Price</th>
+        </tr>
+        {% for car in cars %}
+        <tr>
+          <td>{{ car.brand }}</td>
+          <td>{{ car.price__sum }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
