@@ -11,9 +11,17 @@
     <div class="container">
       <h1>Report 2</h1>
     </div>
+
     <div class="container">
+      <form class="form" method="get">
+        {{ myFilter.form }}
+        <button type="submit" class="btn btn-success">Search</button>
+      </form>
+    </div>
+
+    <div class="container pt-3">
       <table class="table-sm table-bordered table-striped">
-        <tr class="bg-primary text-light">
+        <tr class="bg-secondary text-light">
           <th>Brand</th>
           <th>Total Price</th>
         </tr>

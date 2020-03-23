@@ -32,3 +32,7 @@ class CarFilter(django_filters.FilterSet):
         #     'notRepairedDamage',
         #     'dateCreated'
         # ]
+class report2Filter(django_filters.FilterSet):
+    class Meta:
+        model = Car
+        fields = ['brand']

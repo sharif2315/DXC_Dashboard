@@ -12,17 +12,95 @@
   <body>
 
     <div class="container">
-      <h1>Cars Listings Homepage</h1>
+      <h1>Cars Listings</h1>
     </div>
 
     <div class="container">
+      <form method="POST" action="/">
+        {% csrf_token %}
+        <div class="form-group">
+          <label>Name</label>
+          {{ form.name }}
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          {{ form.price }}
+        </div>
+        <div class="form-group">
+          <label>Vehicle Type</label>
+          {{ form.vehicleType }}
+        </div>
+        <div class="form-group">
+          <label>Registration</label>
+          {{ form.yearOfRegistration }}
+        </div>
+        <div class="form-group">
+          <label>Gearbox</label>
+          {{ form.gearBox }}
+        </div>
+        <div class="form-group">
+          <label>Power</label>
+          {{ form.power }}
+        </div>
+        <div class="form-group">
+          <label>Model</label>
+          {{ form.model }}
+        </div>
+        <div class="form-group">
+          <label>Mileage</label>
+          {{ form.mileage }}
+        </div>
+        <div class="form-group">
+          <label>Fuel Type</label>
+          {{ form.fuelType }}
+        </div>
+        <div class="form-group">
+          <label>Brand</label>
+          {{ form.brand }}
+        </div>
+        <div class="form-group">
+          <label>Not Repaired Damage</label>
+          {{ form.notRepairedDamage }}
+        </div>
+        <div class="form-group">
+          <label>Date Created</label>
+          {{ form.dateCreated }}
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          {{ form.city }}
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          {{ form.country }}
+        </div>
+        <br>
+        <!-- {{ form.price }}
+        {{ form.vehicleType }}
+        {{ form.yearOfRegistration }}
+        {{ form.gearBox }}
+        {{ form.power }}
+        {{ form.model }}
+        {{ form.mileage }}
+        {{ form.fuelType }}
+        {{ form.brand }}
+        {{ form.notRepairedDamage }}
+        {{ form.dateCreated }}
+        {{ form.city }}
+        {{ form.country }} -->
+        <input class="btn btn-info" type="submit" name="Create Car Listing">
+      </form>
+    </div>
+
+
+    <!-- <div class="container">
       <form class="form" method="get">
         {{ myFilter.form|crispy }}
         <button type="submit" class="btn btn-success">Search</button>
       </form>
-    </div>
+    </div> -->
 
-    <div class="container">
+    <div class="container pt-3">
       <table class="table table-bordered table-striped">
         <tr class="bg-secondary text-light">
           <th>Name</th>
