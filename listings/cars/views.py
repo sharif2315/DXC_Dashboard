@@ -44,3 +44,26 @@ def createCar(request):
     form = CarForm()
     context = { 'form': form }
     return render(request, 'cars/create.html', context)
+
+def updateCar(request, pk):
+    car = Car.objects.get(id=pk)
+    form = CarForm(instance=car)
+
+    if request.method == 'POST':
+        form = CarForm(request.POST, instance=car)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
+    context = {'form': form}
+    return render(request, 'cars/update_car.html', context)
+
+def deleteCar(request, pk):
+    car = Car.objects.get(id=pk)
+
+    if request.method == 'POST':
+        car.delete()
+        return redirect('/')
+
+    context = {'car': car}
+    return render(request, 'cars/delete.html', context)

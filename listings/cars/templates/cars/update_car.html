@@ -1,0 +1,27 @@
+{% load crispy_forms_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Update Car</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Update Page</h1>
+    </div>
+
+    <div class="container py-3">
+      <form class="" method="post">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+        <input class="btn btn-secondary" type="submit" name="Update Car" value="Update Car">
+      </form>
+    </div>
+
+  </body>
+</html>

@@ -75,19 +75,6 @@
           {{ form.country }}
         </div>
         <br>
-        <!-- {{ form.price }}
-        {{ form.vehicleType }}
-        {{ form.yearOfRegistration }}
-        {{ form.gearBox }}
-        {{ form.power }}
-        {{ form.model }}
-        {{ form.mileage }}
-        {{ form.fuelType }}
-        {{ form.brand }}
-        {{ form.notRepairedDamage }}
-        {{ form.dateCreated }}
-        {{ form.city }}
-        {{ form.country }} -->
         <input class="btn btn-info" type="submit" name="Create Car Listing">
       </form>
     </div>
@@ -114,6 +101,7 @@
         </tr>
         {% for car in cars %}
         <tr>
+
           <td>{{ car.name }}</td>
           <td>{{ car.price }}</td>
           <td>{{ car.vehicleType }}</td>
@@ -122,6 +110,9 @@
           <td>{{ car.mileage }}</td>
           <td>{{ car.city }}</td>
           <td>{{ car.country }}</td>
+          <td><a href="{% url 'update_car' car.id %}" class="btn btn-secondary">Update</a></td>
+          <td><a href="{% url 'delete' car.id %}" class="btn btn-danger">Delete</a></td>
+
         </tr>
         {% endfor %}
       </table>
